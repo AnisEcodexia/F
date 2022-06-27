@@ -256,7 +256,7 @@ const MultiUploadComp = () => {
   };
 
   return (
-    <div class="container-md" align="center">
+    <div className="container-md" align="center">
       <h1>Upload your video or videos</h1>
       <form>
         <input id="file" type="file" onChange={changeHandler} />

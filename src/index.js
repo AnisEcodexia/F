@@ -70,9 +70,9 @@ ReactDOM.render(
         <Route
           path="profile"
           element={
-            <RequireToken>
+            
               <User />
-            </RequireToken>
+            
           }
         ></Route>
         <Route path="dashboard" element={<Dashboard />}></Route>
