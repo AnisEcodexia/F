@@ -1,5 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
+import { Row } from "react-bootstrap";
 import { useParams, useNavigate, Link } from "react-router-dom";
 
 const VideoList = () => {
@@ -8,7 +9,7 @@ const VideoList = () => {
   let { navigate } = useNavigate();
   useEffect(() => {
     const fetchImage = async () => {
-      await fetch(`https://cbe7-196-64-150-113.eu.ngrok.io/api/user/aniss`)
+      await fetch("http://38.17.52.145:8010/api/user/aniss")
         .then((response) => response.json())
         .then((item) => {
           setData(item);
@@ -22,18 +23,31 @@ const VideoList = () => {
   }, []);
 
   const dispImageZones = data.map((vid, i) => (
-    <li class="list-group-item">
-      <Link to={`/admin/Videos/${vid.video}`}>{vid.video}</Link>
-      <br />
-    </li>
+    <div class="card col-sm-3" style={{ width: `400px`, margin: "20px" }}>
+    <div class="card-header center">Floor {vid.floor} Section {vid.section}</div>
+    <a href={`/user/Videos/${vid.video}`}>
+    <img
+      class="card-img-top"
+      src={vid.image}
+      alt="Card image cap"
+    />
+    </a>
+    <div class="card-body">
+      <p class="card-text">
+      {vid.description}
+      </p>
+    </div>
+    <a class="btn btn-primary" href={`/user/VideoConfiguration/${vid.video}`} role="button">Reconfigure Video</a>
+    <a class="btn btn-primary" href={`/user/VideoZoning/${vid.video}`} role="button">Rezone Video </a>
+    </div>
+    
   ));
 
   return (
-    <div>
-      <center>
-        <ul class="list-group list-group-flush">{dispImageZones}</ul>
-      </center>
-    </div>
+    <Row>
+
+        {dispImageZones}
+    </Row>
   );
 };
 

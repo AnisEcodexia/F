@@ -26,7 +26,6 @@ const SingleVideo = () => {
     ctx.drawImage(img, 0, 0, image.width, image.height);
     {
       imageData.zone.map((zone, e) => {
-        
         ctx.beginPath();
         ctx.strokeStyle = "black";
         ctx.lineWidth = 1;
@@ -38,44 +37,38 @@ const SingleVideo = () => {
 
   useEffect(() => {
     const fethIntersection = async () => {
-      await fetch(
-        `https://cbe7-196-64-150-113.eu.ngrok.io/api/intersection/${videoname}`
-      )
+      await fetch(`http://38.17.52.145:8010/api/intersection/${videoname}`)
         .then((response) => response.json())
         .then((item) => {
           console.log(item.zones);
           setIntersections(item.zones);
           console.log(intersections);
-          $("dataTable").DataTable();
+         
         });
     };
     fethIntersection();
-  }, []);
+  }, [intersections]);
 
   useEffect(() => {
     const fetchDetection = async () => {
-      await fetch(
-        `https://cbe7-196-64-150-113.eu.ngrok.io/api/detection/${videoname}`
-      )
+      await fetch(`http://38.17.52.145:8010/api/detection/${videoname}`)
         .then((response) => response.json())
         .then((item) => {
           console.log(item);
           setDetections(item.detection);
           console.log(item);
-          $("dataTable").DataTable();
+          $("table").DataTable();
         })
         .catch((err) => {
           console.log(err);
         });
     };
     fetchDetection();
-  }, []);
+  }, [detections]);
 
   useEffect(() => {
     const fetchImage = async () => {
-      await fetch(
-        `https://cbe7-196-64-150-113.eu.ngrok.io/api/user/aniss/${videoname}`
-      )
+      await fetch(`http://38.17.52.145:8010/api/user/aniss/${videoname}`)
         .then((response) => response.json())
         .then((item) => {
           console.log(item);
@@ -111,7 +104,7 @@ const SingleVideo = () => {
   const detectionsTable = intersections.map((vid, i) => {
     return (
       <div>
-        <table class="table-hover table-striped table dataTable">
+        <table class="table-hover table-striped table A">
           <thead>
             <tr>
               <th>Person Id</th>
@@ -141,7 +134,7 @@ const SingleVideo = () => {
   const intersectionsTable2 = intersections.map((zone, i) => {
     return (
       <div>
-        <table class="table-hover table-striped table dataTable">
+        <table class="table-hover table-striped table B" >
           <thead>
             <tr>
               <th>Person Id</th>
@@ -170,7 +163,7 @@ const SingleVideo = () => {
   const intersectionsTable1 = intersections.map((vid, i) => {
     return (
       <div>
-        <table class="table-hover table-striped table dataTable">
+        <table class="table-hover table-striped table B">
           <thead>
             <tr>
               <th>zone_id</th>
@@ -218,7 +211,6 @@ const SingleVideo = () => {
         id="a"
         onLoad={zone}
       ></img>
-
       <canvas width="640px" height="360px" id="canvas3"></canvas>
       {showForm === true && (
         <div className="rowC">
@@ -229,7 +221,6 @@ const SingleVideo = () => {
                   <p>zone:{e + 1}</p>
                   <p>name:{cord.zone_name}</p>
                   <img src={cord.zone_image}></img>
-                  
                 </div>
               </div>
             </div>
@@ -239,7 +230,7 @@ const SingleVideo = () => {
       <div>
         {intersectionsTable2}
         {intersectionsTable1}
-        {detectionsTable}
+          {detectionsTable}
       </div>
     </div>
   );

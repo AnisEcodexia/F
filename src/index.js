@@ -40,12 +40,13 @@ import Dashboard from "views/Dashboard";
 import Dashboardd from "views/Dashboardd";
 import Upgrade from "views/Upgrade";
 import Login from "views/Login";
-import { RequireToken } from "./auth";
+
 import SignIn from 'views/SignIn'
 import VideoDashboard from "views/VideosDashboard";
 import Single from "views/SingleVideo";
 import VideoConfiguration from "views/VideoConfiguration";
 import SinglePerson from "views/SinglePerson";
+import VideoZoning from "views/VideoZoning";
 
 ReactDOM.render(
   <BrowserRouter>
@@ -56,23 +57,23 @@ ReactDOM.render(
       <Route path="/user" element={<AdminLayout />}>
         <Route path="upload" element={<MultiUploadComp />} />
         <Route path="dashboardd" element={<Dashboardd />} />
+        <Route path="VideoZoning" element={<VideoZoning />} />
         <Route path="VideosDashboard" element={<VideoDashboard />} />
         <Route path="SingleVideo" element={<Single />} />
         <Route path="SinglePerson" element={<SinglePerson />} />
-        <Route path="VideoConfiguration" element={<VideoConfiguration />}></Route>
         <Route path="icons" element={<Icons />} />
         <Route path="Videos" element={<VideoList />}></Route>
         <Route path="Videos/:videoname" element={<SingleVideo />}></Route>
+        <Route path="VideoConfiguration/:videoname" element={<VideoConfiguration />}></Route>
+        <Route path="VideoZoning/:videoname" element={<VideoZoning />}></Route>
         <Route path="notifications" element={<Notifications />}></Route>
         <Route path="maps" element={<Maps />}></Route>
         <Route path="typography" element={<Typography />}></Route>
         <Route path="table" element={<TableList />}></Route>
         <Route
           path="profile"
-          element={
-            
+          element={ 
               <User />
-            
           }
         ></Route>
         <Route path="dashboard" element={<Dashboard />}></Route>

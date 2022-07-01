@@ -14,7 +14,6 @@ const VideosDashboard = () => {
             alt="Card image cap"
           />
           <div class="card-body">
-            
             <p class="card-text">
               Some quick example text to build on the card title and make up the
               bulk of the card's content.
@@ -30,7 +29,6 @@ const VideosDashboard = () => {
             alt="Card image cap"
           />
           <div class="card-body">
-           
             <p class="card-text">
               Some quick example text to build on the card title and make up the
               bulk of the card's content.
@@ -46,7 +44,6 @@ const VideosDashboard = () => {
             alt="Card image cap"
           />
           <div class="card-body">
-            
             <p class="card-text">
               Some quick example text to build on the card title and make up the
               bulk of the card's content.
@@ -64,7 +61,6 @@ const VideosDashboard = () => {
             alt="Card image cap"
           />
           <div class="card-body">
-            
             <p class="card-text">
               Some quick example text to build on the card title and make up the
               bulk of the card's content.
@@ -80,7 +76,6 @@ const VideosDashboard = () => {
             alt="Card image cap"
           />
           <div class="card-body">
-            
             <p class="card-text">
               Some quick example text to build on the card title and make up the
               bulk of the card's content.
@@ -96,7 +91,6 @@ const VideosDashboard = () => {
             alt="Card image cap"
           />
           <div class="card-body">
-            
             <p class="card-text">
               Some quick example text to build on the card title and make up the
               bulk of the card's content.
@@ -115,7 +109,6 @@ const VideosDashboard = () => {
             alt="Card image cap"
           />
           <div class="card-body">
-            
             <p class="card-text">
               Some quick example text to build on the card title and make up the
               bulk of the card's content.
@@ -131,7 +124,6 @@ const VideosDashboard = () => {
             alt="Card image cap"
           />
           <div class="card-body">
-           
             <p class="card-text">
               Some quick example text to build on the card title and make up the
               bulk of the card's content.
@@ -147,7 +139,6 @@ const VideosDashboard = () => {
             alt="Card image cap"
           />
           <div class="card-body">
-            
             <p class="card-text">
               Some quick example text to build on the card title and make up the
               bulk of the card's content.
@@ -165,10 +156,7 @@ const VideosDashboard = () => {
             alt="Card image cap"
           />
           <div class="card-body">
-            
-            <p class="card-text">
-              Write a short description
-            </p>
+            <p class="card-text">Write a short description</p>
           </div>
           <div class="card-footer text-muted">Uploaded 25/06/2022</div>
         </div>
@@ -180,7 +168,6 @@ const VideosDashboard = () => {
             alt="Card image cap"
           />
           <div class="card-body">
-            
             <p class="card-text">
               Some quick example text to build on the card title and make up the
               bulk of the card's content.
@@ -196,7 +183,6 @@ const VideosDashboard = () => {
             alt="Card image cap"
           />
           <div class="card-body">
-            
             <p class="card-text">
               Some quick example text to build on the card title and make up the
               bulk of the card's content.

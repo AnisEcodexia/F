@@ -17,6 +17,38 @@ import {
 } from "react-bootstrap";
 
 function Dashboardd() {
+  useEffect(() => {
+    const fethIntersection = async () => {
+      await fetch(`http://38.17.52.145:8010/api/intersection/${videoname}`)
+        .then((response) => response.json())
+        .then((item) => {
+          console.log(item.zones);
+          setIntersections(item.zones);
+          console.log(intersections);
+         
+        });
+    };
+    fethIntersection();
+  }, [intersections]);
+
+  useEffect(() => {
+    const fetchDetection = async () => {
+      await fetch(`http://38.17.52.145:8010/api/detection/${videoname}`)
+        .then((response) => response.json())
+        .then((item) => {
+          console.log(item);
+          setDetections(item.detection);
+          console.log(item);
+          $("table").DataTable();
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    };
+    fetchDetection();
+  }, [detections]);
+
+  
   return (
     <>
       <Container fluid>

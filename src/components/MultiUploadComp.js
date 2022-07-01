@@ -63,14 +63,14 @@ const MultiUploadComp = () => {
 
   const handleOnChange = (e) => {
     console.log(e.target.files[0]);
-    var image = document.getElementById(e.target.nextSibling.id);
+    console.log(e.target.id)
+    var image = document.getElementsByName("zoneimg")[e.target.id];
     image.src = URL.createObjectURL(e.target.files[0]);
+    console.log(image)
     console.log(getBase64Image(image));
   };
   const onImgLoad = (e) => {
-    var image = document.getElementById(e.target.id);
-    console.log(getBase64Image(image));
-    console.log(image.src);
+    
   };
 
   const saveCords = async (event) => {
@@ -86,7 +86,7 @@ const MultiUploadComp = () => {
       },
     };
     await axios
-      .post("https://cbe7-196-64-150-113.eu.ngrok.io/api/video/", {
+      .post("http://38.17.52.145:8010/api/video/", {
         video: file.name,
         user: "aniss",
         label: label,
@@ -121,7 +121,7 @@ const MultiUploadComp = () => {
     data.append("file", file);
     axios
       .post(
-        "https://cbe7-196-64-150-113.eu.ngrok.io/api/upload/",
+        "http://38.17.52.145:8010/api/upload/",
         data,
         options
       )
@@ -152,7 +152,7 @@ const MultiUploadComp = () => {
       },
     };
     await axios
-      .post("https://cbe7-196-64-150-113.eu.ngrok.io/api/video/", {
+      .post("http://38.17.52.145:8010/api/video/", {
         video: file.name,
         user: "anis",
         label: label,
@@ -180,7 +180,7 @@ const MultiUploadComp = () => {
     data.append("file", file);
     axios
       .post(
-        "https://cbe7-196-64-150-113.eu.ngrok.io/api/upload/",
+        "http://38.17.52.145:8010/api/upload/",
         data,
         options
       )
@@ -362,13 +362,13 @@ const MultiUploadComp = () => {
                           ></input>
                         </div>
                         <input
+                        id={e}
                           accept="image/*"
                           type="file"
                           onChange={handleOnChange}
                         />
-                        <div style={{ width: "100px", height: "100px" }}>
-                          <img
-                            id={e}
+                        <div >
+                          <img 
                             alt="Zone Icon"
                             name="zoneimg"
                             onLoad={onImgLoad}

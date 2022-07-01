@@ -42,7 +42,7 @@ export function getBase64Image(img) {
   // guess the original format, but be aware the using "image/jpg"
   // will re-encode the image.
   var dataURL = canvas.toDataURL();
-  canvas.remove()
+  
   return dataURL
 }
 // Base64 Image to Canvas with a Crop

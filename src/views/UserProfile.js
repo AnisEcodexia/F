@@ -30,8 +30,6 @@ function User() {
                       <Form.Group>
                         <label>Company (disabled)</label>
                         <Form.Control
-                          defaultValue="Creative Code Inc."
-                          disabled
                           placeholder="Company"
                           type="text"
                         ></Form.Control>
@@ -41,7 +39,7 @@ function User() {
                       <Form.Group>
                         <label>Username</label>
                         <Form.Control
-                          defaultValue="michael23"
+                          
                           placeholder="Username"
                           type="text"
                         ></Form.Control>
@@ -64,7 +62,7 @@ function User() {
                       <Form.Group>
                         <label>First Name</label>
                         <Form.Control
-                          defaultValue="Mike"
+                          
                           placeholder="Company"
                           type="text"
                         ></Form.Control>
@@ -74,7 +72,7 @@ function User() {
                       <Form.Group>
                         <label>Last Name</label>
                         <Form.Control
-                          defaultValue="Andrew"
+                          defaultValue=""
                           placeholder="Last Name"
                           type="text"
                         ></Form.Control>
@@ -86,7 +84,7 @@ function User() {
                       <Form.Group>
                         <label>Address</label>
                         <Form.Control
-                          defaultValue="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09"
+                          defaultValue=""
                           placeholder="Home Address"
                           type="text"
                         ></Form.Control>
@@ -98,7 +96,7 @@ function User() {
                       <Form.Group>
                         <label>City</label>
                         <Form.Control
-                          defaultValue="Mike"
+                          defaultValue=""
                           placeholder="City"
                           type="text"
                         ></Form.Control>
@@ -108,7 +106,7 @@ function User() {
                       <Form.Group>
                         <label>Country</label>
                         <Form.Control
-                          defaultValue="Andrew"
+                          defaultValue=""
                           placeholder="Country"
                           type="text"
                         ></Form.Control>
@@ -130,8 +128,7 @@ function User() {
                         <label>About Me</label>
                         <Form.Control
                           cols="80"
-                          defaultValue="Lamborghini Mercy, Your chick she so thirsty, I'm in
-                          that two seat Lambo."
+                          defaultValue=""
                           placeholder="Here can be your description"
                           rows="4"
                           as="textarea"
@@ -170,14 +167,12 @@ function User() {
                       className="avatar border-gray"
                       src={require("assets/img/faces/face-3.jpg").default}
                     ></img>
-                    <h5 className="title">Mike Andrew</h5>
+                    <h5 className="title"> Anis</h5>
                   </a>
-                  <p className="description">michael24</p>
+                  <p className="description">Anis12</p>
                 </div>
                 <p className="description text-center">
-                  "Lamborghini Mercy <br></br>
-                  Your chick she so thirsty <br></br>
-                  I'm in that two seat Lambo"
+                  
                 </p>
               </Card.Body>
               <hr></hr>

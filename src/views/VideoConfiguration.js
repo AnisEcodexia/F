@@ -1,22 +1,43 @@
 import React from "react";
-
+import {useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 const VideoConfiguration = () => {
+  const [imageData, setImageData] = useState([]);
+  let { videoname } = useParams();
+
+  useEffect(() => {
+    const fetchImage = async () => {
+      await fetch(`http://38.17.52.145:8010/api/user/aniss/${videoname}`)
+        .then((response) => response.json())
+        .then((item) => {
+          console.log(item);
+          var img = document.getElementById("a");
+          img.src = item.image;
+          setImageData(item);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    };
+    fetchImage();
+  }, []);
+
   return (
     <div class="container">
       <div class="rendered-form">
         <h1>Video Configuration</h1>
         <img
-          style={{ width: "800px", height: "450px", overflow: "auto" }}
-          src={require("assets/img/1.png").default}
-          alt="Card image cap"
-        />
+        align="center"
+        width="800px"
+        height="450px"
+        id="a"
+      ></img>
         <div class="formbuilder-text form-group field-text-1656204884948">
-          <label for="text-1656204884948" class="formbuilder-text-label">
-            Label
-          </label>
+          <label for="text-1656204884948" class="formbuilder-text-label">label
+                </label>
           <input
             type="text"
-            class="form-control"
+            class="form-control" value={ imageData.label }
           />
         </div>
         <div class="formbuilder-textarea form-group field-textarea-1656204886384">
@@ -27,6 +48,7 @@ const VideoConfiguration = () => {
             Description
           </label>
           <textarea
+          value={ imageData.description }
             type="textarea"
             class="form-control"
           ></textarea>
@@ -36,6 +58,7 @@ const VideoConfiguration = () => {
             Floor{" "}
           </label>
           <input
+          value={ imageData.floor }
             type="text"
             class="form-control"
           />
@@ -45,6 +68,7 @@ const VideoConfiguration = () => {
             Section
           </label>
           <input
+          value={ imageData.section }
             type="text"
             class="form-control"
           />
